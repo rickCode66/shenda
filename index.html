@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>校外人员和车辆入校申请</title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			#app {
+				display: flex;
+				flex-direction: column;
+				background-color: #ffffff;
+				width: 340px;
+				margin: 0 auto;
+			}
+
+			.content {
+				padding-right: 20px;
+				padding-left: 20px;
+			}
+
+			.fx-column {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.fx-row {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.fx-between {
+				justify-content: space-between;
+			}
+
+			.bumen {
+				color: rgb(146, 208, 80);
+			}
+
+			.gerenmsg {
+				background-color: #f2f2f2;
+				color: #7f7f7f;
+				font-size: 11pt;
+				height: 37px;
+				line-height: 37px;
+				padding-left: 16px;
+				/* font-weight: bold; */
+			}
+
+			.cell {
+				border-bottom: #f1f1f1 1pt solid;
+				height: 41px;
+				line-height: 41px;
+				margin-left: 16px;
+			}
+
+			.geren .left {
+				width: 106px;
+				font-family: 'PingFang SC', 微软雅黑;
+				font-size: 13pt;
+			}
+
+			.geren .right {
+				font-family: 'PingFang SC', 微软雅黑;
+				font-size: 13pt;
+			}
+
+			.cell .lh {
+				line-height: 41px;
+			}
+
+			.shenqing {
+				margin-left: 16px;
+				margin-top: 14px;
+				font-size: 13pt;
+				font-family: 'PingFang SC', 微软雅黑;
+			}
+
+			.xingxing {
+				color: #ff0000;
+			}
+
+			.shiyou {
+				margin-left: 16px;
+				color: #7f7f7f;
+				font-size: 11pt;
+				/* font-weight: bold; */
+				height: 37px;
+				line-height: 37px;
+			}
+
+			.banqian {
+				margin-top: 5px;
+				margin-left: 16px;
+				height: 50px;
+				font-size: 13pt;
+				font-family: 'PingFang SC', 微软雅黑;
+				border-bottom: #f1f1f1 1pt solid;
+			}
+
+			.chepai {
+				margin-top: 10px;
+				margin-left: 16px;
+				height: 30px;
+				font-size: 13pt;
+				font-family: 'PingFang SC', 微软雅黑;
+				border-bottom: #f1f1f1 1pt solid;
+			}
+
+			.m-l-16 {
+				margin-left: 16px;
+			}
+
+			.m-t-6 {
+				margin-top: 6px;
+			}
+
+			table {
+				border-collapse: collapse;
+				margin-left: 16px;
+				margin-right: 16px;
+			}
+
+			th,
+			td {
+				border: #f1f1f1 1pt solid;
+				padding: 8px;
+				font-family: 'PingFang SC', 微软雅黑;
+			}
+
+			.hongse {
+				margin-top: 6px;
+				font-size: 10pt;
+				color: #ff0000;
+				height: 37px;
+				line-height: 37px;
+				margin-left: 16px;
+				/* font-weight: bold; */
+			}
+
+			.shenhe {
+				margin-left: -40px;
+				margin-right: -40px;
+				background-color: #3a89ca;
+				color: white;
+				font-weight: bold;
+				height: 40px;
+				line-height: 40px;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			.dangwei {
+				margin-top: 20px;
+				background-color: #f2f2f2;
+				color: #7f7f7f;
+				font-size: 11pt;
+				height: 50px;
+				padding-top: 5px;
+				padding-left: 16px;
+				/* font-weight: bold; */
+			}
+			.top-title {
+				margin-top: 12px;
+				margin-bottom: 12px;
+				text-align: center;
+				font-size: 13.5pt;
+				color: #333333;
+				font-family: 'PingFang SC', 微软雅黑;
+				height: 65px;
+				line-height: 65px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<label class="top-title">校外人员和车辆入校申请</label>
+			<div class="content">
+				<div class="bumen">
+					<span style="display: block;font-size: 10pt;margin-left: 16px;">主管部门：保卫处</span>
+					<span
+						style="display: block;font-size: 10pt;margin-left: 16px;margin-top: 2px;">联系方式：南校园：020-84111705，东校园：020-39332297，北校园：020-87333683，珠海校区：0756-3668119
+						，深圳校区：0755-23260061</span>
+				</div>
+				<div class="shenqing">
+					申请时间：{{shenqingDate}}
+				</div>
+				<div class="geren fx-column" style="margin-top: 7px;">
+					<label class="gerenmsg">个人信息</label>
+					<div class="cell fx-row">
+						<label class="left">操作人<label class="xingxing">*</label></label>
+						<label class="right">何雪涵</label>
+					</div>
+					<div class="cell fx-row">
+						<label class="left">所在单位<label class="xingxing">*</label></label>
+						<label class="right">药学院（深圳）</label>
+					</div>
+					<div class="cell fx-row">
+						<label class="left">入校事由<label class="xingxing">*</label></label>
+						<label class="right">工程维修</label>
+					</div>
+					<label class="shiyou">详细事由<label class="xingxing">*</label></label>
+					<label class="banqian">实验家具搬迁<label class="xingxing">*</label></label>
+					<div class="cell fx-row">
+						<label class="left">入校时间</label>
+						<label class="right">{{ruxiaoDate}}</label>
+					</div>
+					<div class="cell fx-row">
+						<label class="left">离校时间</label>
+						<label class="right">{{lixiaoDate}}</label>
+					</div>
+					<div class="cell fx-row">
+						<label class="left">入校校区</label>
+						<label class="right">深圳校区</label>
+					</div>
+					<div class="cell fx-row">
+						<label class="left">入校校门</label>
+						<label class="right">西南门</label>
+					</div>
+					<div class="cell fx-row">
+						<label class="left">入校人数</label>
+						<label class="right">2</label>
+					</div>
+					<label class="shiyou">是否驾车<label class="xingxing">*</label></label>
+					<div class="fx-row m-l-16 m-t-6">
+						<input style="margin-top: 6px;" type="radio" checked disabled value="option1">
+						<label class="right">是</label>
+					</div>
+					<div class="fx-row m-l-16 m-t-6">
+						<input style="margin-top: 6px;" type="radio" disabled value="option1">
+						<label class="right" style="color: #7f7f7f;">否</label>
+					</div>
+					<label class="chepai">粤BF32234</label>
+					<label class="shiyou">车辆类型<label class="xingxing">*</label></label>
+					<div class="fx-row m-l-16" style="border-bottom: #f1f1f1 1pt solid;height: 40px;line-height: 40px;">
+						<input style="margin-top: 12px;" type="radio" checked disabled value="option1">
+						<label class="right">小车 </label>
+					</div>
+					<div class="fx-row m-l-16" style="border-bottom: #f1f1f1 1pt solid;height: 40px;line-height: 40px;">
+						<input style="margin-top: 12px;" type="radio" disabled value="option1">
+						<label class="right">其他（大巴、中巴、货车等）</label>
+					</div>
+					<label class="shiyou">校外人员信息<label class="xingxing">*</label></label>
+					<table style="margin-top: 8px;">
+						<tr>
+							<td>姓名</td>
+							<td>赵小朋</td>
+						</tr>
+						<tr>
+							<td>电话</td>
+							<td>130****8818</td>
+						</tr>
+						<tr>
+							<td>身份证号码</td>
+							<td>4127**********1856</td>
+						</tr>
+					</table>
+					<table style="margin-top: 3px;">
+						<tr>
+							<td>姓名</td>
+							<td>丁逑</td>
+						</tr>
+						<tr>
+							<td>电话</td>
+							<td>137****3424</td>
+						</tr>
+						<tr>
+							<td>身份证号码</td>
+							<td>4305**********0016</td>
+						</tr>
+					</table>
+					<label class="hongse" style="margin-top: 10px;">默认填写的第一个人为入校车辆的联系人</label>
+					<div class="shenhe fx-row fx-between" style="margin-top: 20px;">
+						<label>审核信息</label>
+						<img style="height: 18px;width: 16px;align-self: center" src="data:image/png;base64,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"/>
+					</div>
+					<label class="dangwei">
+						二级单位党政办主任/职能部门综合<label style="display: inline-block;">办主管审批</label>
+					</label>
+					<label class="banqian">同意</label>
+					<div class="cell fx-row" style="border-bottom: none;">
+						<label class="left">审批时间</label>
+						<label class="right">{{shenqingDate}}</label>
+					</div>
+					<label class="gerenmsg">保卫部审批</label>
+					<label class="banqian">同意</label>
+					<div class="cell fx-row" style="margin-bottom: 20px;">
+						<label class="left">审批时间</label>
+						<label class="right">{{shenqingDate}}</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data() {
+				return {
+					message: 'Hello, Vue!',
+					isCollapsed: true,
+					base64Output: '',
+					// 申请时间可以是打开的前一天，
+					// 入校时间是打开的当天，
+					// 离校时间是打开的第2天
+					shenqingDate: '',
+					ruxiaoDate: '',
+					lixiaoDate: ''
+				}
+			},
+			mounted() {
+				// 主动获取当前格式时间
+			    this.shenqingDate = this.getCurrentDate(-1);
+				this.ruxiaoDate = this.getCurrentDate();
+				this.lixiaoDate = this.getCurrentDate(2);
+			},
+			methods: {
+				getCurrentDate(days) {
+				      const date = new Date();
+					  if (days) {
+						  date.setDate(date.getDate() + days)
+					  }
+				      const year = date.getFullYear();
+				      const month = String(date.getMonth() + 1).padStart(2, '0');
+				      const day = String(date.getDate()).padStart(2, '0');
+				      return `${year}-${month}-${day}`;
+				}
+			}
+		});
+	</script>
+</html>
